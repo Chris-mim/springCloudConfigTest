@@ -1,0 +1,27 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8084/eureka/
+server:
+  port: 8086
+spring:
+  application:
+    name: service-order
+  zipkin:
+    base-url: http://localhost:9411
+
+##feign自带熔断器，但默认关闭的
+
+feign:
+  hystrix:
+    enabled: true
+
+####超时时间
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 4000
+
